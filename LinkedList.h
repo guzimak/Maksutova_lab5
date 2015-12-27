@@ -8,10 +8,10 @@ typedef double Data;
 
 class LinkedList
 {
-    // Необязательно, нужно для "copy & swap", если вы помните, что это.
+    // РќРµРѕР±СЏР·Р°С‚РµР»СЊРЅРѕ, РЅСѓР¶РЅРѕ РґР»СЏ "copy & swap", РµСЃР»Рё РІС‹ РїРѕРјРЅРёС‚Рµ, С‡С‚Рѕ СЌС‚Рѕ.
     friend void swap(LinkedList& left, LinkedList& right);
 
-    // Полезно для отладки, обязательно.
+    // РџРѕР»РµР·РЅРѕ РґР»СЏ РѕС‚Р»Р°РґРєРё, РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ.
     friend std::ostream& operator<<(std::ostream& output, const LinkedList& xs);
 
 public:
@@ -34,7 +34,7 @@ public:
     void pop_back();
     void pop_front();
 
-    // При некорректном индексе должны возбужадать std::out_of_range.
+    // РџСЂРё РЅРµРєРѕСЂСЂРµРєС‚РЅРѕРј РёРЅРґРµРєСЃРµ РґРѕР»Р¶РЅС‹ РІРѕР·Р±СѓР¶Р°РґР°С‚СЊ std::out_of_range.
     void remove_at(size_t index);
     void insert_before(size_t index, const Data& value);
     void insert_after(size_t index, const Data& value);
@@ -54,15 +54,15 @@ private:
 
 
 private:
-    // Возвращает указатель на узел с заданным индексом.
+    // Р’РѕР·РІСЂР°С‰Р°РµС‚ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СѓР·РµР» СЃ Р·Р°РґР°РЅРЅС‹Рј РёРЅРґРµРєСЃРѕРј.
     Node* node_at(size_t index);
 
-    // Создают и добавляют в список узел до (после) указанного.
-    // Если указанный --- nullptr, добавляют узел в начало (в конец).
+    // РЎРѕР·РґР°СЋС‚ Рё РґРѕР±Р°РІР»СЏСЋС‚ РІ СЃРїРёСЃРѕРє СѓР·РµР» РґРѕ (РїРѕСЃР»Рµ) СѓРєР°Р·Р°РЅРЅРѕРіРѕ.
+    // Р•СЃР»Рё СѓРєР°Р·Р°РЅРЅС‹Р№ --- nullptr, РґРѕР±Р°РІР»СЏСЋС‚ СѓР·РµР» РІ РЅР°С‡Р°Р»Рѕ (РІ РєРѕРЅРµС†).
     Node* insert_before(Node* before);
     Node* insert_after(Node* after);
 
-    // Удаляет узел по указателю на него.
+     // РЈРґР°Р»СЏРµС‚ СѓР·РµР» РїРѕ СѓРєР°Р·Р°С‚РµР»СЋ РЅР° РЅРµРіРѕ.
     void erase(const Node* node);
     void clear();
 
